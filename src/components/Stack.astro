@@ -1,0 +1,80 @@
+---
+import SkillGroup from './SkillGroup.astro';
+
+const groups = [
+  {
+    title: 'backend',
+    skills: [
+      { name: 'python / fastapi', solid: true },
+      { name: 'java',            solid: true },
+      { name: 'postgresql · mysql', solid: true },
+      { name: 'spring boot',    solid: false },
+    ],
+  },
+  {
+    title: 'mobile',
+    skills: [
+      { name: 'flutter / dart',      solid: true },
+      { name: 'firebase',            solid: true },
+      { name: 'flutter_bloc',        solid: true },
+      { name: 'clean architecture',  solid: false },
+    ],
+  },
+  {
+    title: 'devops',
+    skills: [
+      { name: 'docker',          solid: true },
+      { name: 'github actions',  solid: true },
+      { name: 'linux / debian',  solid: false },
+      { name: 'nginx',           solid: false },
+    ],
+  },
+];
+---
+
+<section class="stack" id="stack">
+  <p class="stack-eyebrow">// stack técnico</p>
+  <div class="stack-grid">
+    {groups.map(group => (
+      <SkillGroup title={group.title} skills={group.skills} />
+    ))}
+  </div>
+</section>
+
+<style>
+  .stack {
+    padding: 5rem 4rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .stack-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--green-label);
+    margin-bottom: 2.5rem;
+  }
+
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    max-width: 640px;
+  }
+
+  @media (max-width: 640px) {
+    .stack {
+      padding: 3rem 1.5rem;
+    }
+
+    .stack-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .stack-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
