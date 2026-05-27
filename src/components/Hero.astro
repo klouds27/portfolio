@@ -1,0 +1,169 @@
+---
+---
+
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <p class="hero-eyebrow">// backend & mobile developer</p>
+    <h1 class="hero-name">deb adalwolf<span class="hero-cursor" aria-hidden="true"></span></h1>
+    <p class="hero-desc">APIs y aplicaciones móviles. Python, Java, Flutter, Docker. Estudiante de DAM en Cesur Sevilla.</p>
+
+    <div class="hero-ctas">
+      <a href="#proyectos" class="cta-primary">ver proyectos</a>
+      <a href="https://github.com/klouds27" target="_blank" rel="noopener" class="cta-secondary">github ↗</a>
+    </div>
+
+    <dl class="hero-stats">
+      <div class="hero-stat">
+        <dt class="stat-label">proyectos</dt>
+        <dd class="stat-value">2</dd>
+      </div>
+      <div class="hero-stat">
+        <dt class="stat-label">contrib. open source</dt>
+        <dd class="stat-value">4+</dd>
+      </div>
+      <div class="hero-stat">
+        <dt class="stat-label">tecnologías core</dt>
+        <dd class="stat-value">5</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 7rem 4rem 5rem;
+    max-width: 860px;
+  }
+
+  .hero-content > * {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: fade-up 0.5s ease forwards;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--green-label);
+    margin-bottom: 1.25rem;
+    animation-delay: 0.05s;
+  }
+
+  .hero-name {
+    font-family: var(--font-mono);
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--fg);
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+    animation-delay: 0.15s;
+  }
+
+  .hero-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 0.85em;
+    background-color: var(--green-label);
+    margin-left: 4px;
+    vertical-align: middle;
+    animation:
+      fade-up 0.5s ease 0.15s forwards,
+      blink 1s step-end 0.65s infinite;
+    opacity: 0;
+  }
+
+  .hero-desc {
+    font-size: 15px;
+    color: var(--fg-dim);
+    line-height: 1.65;
+    max-width: 520px;
+    margin-bottom: 2.5rem;
+    animation-delay: 0.25s;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 3.5rem;
+    animation-delay: 0.35s;
+  }
+
+  .cta-primary {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    padding: 0.6rem 1.25rem;
+    background-color: var(--green);
+    color: var(--green-text);
+    border-radius: var(--radius-btn);
+    transition: background-color 0.15s ease;
+  }
+
+  .cta-primary:hover {
+    background-color: #556b43;
+  }
+
+  .cta-secondary {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--fg-dim);
+    transition: color 0.15s ease;
+  }
+
+  .cta-secondary:hover {
+    color: var(--fg);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    animation-delay: 0.45s;
+  }
+
+  .hero-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .stat-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--fg-ghost);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .stat-value {
+    font-family: var(--font-mono);
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--fg);
+  }
+
+  @keyframes fade-up {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+
+  @media (max-width: 640px) {
+    .hero {
+      padding: 4rem 1.5rem 3rem;
+    }
+
+    .hero-name {
+      font-size: 36px;
+    }
+
+    .hero-stats {
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+  }
+</style>
