@@ -1,14 +1,14 @@
 :root {
-  --bg:           #0d0d0b;
-  --bg-card:      #131310;
-  --fg:           #e8e2d4;
-  --fg-dim:       rgba(232, 226, 212, 0.45);
-  --fg-ghost:     rgba(232, 226, 212, 0.25);
-  --green:        #4a5c3a;
-  --green-text:   #b8c9a0;
-  --green-label:  #6b8a50;
-  --border:       rgba(255, 255, 255, 0.07);
-  --border-focus: rgba(255, 255, 255, 0.12);
+  --bg:             #0a1320;
+  --bg-card:        #0e1a2e;
+  --fg:             #cbdae6;
+  --fg-dim:         #b0c1d1;
+  --fg-ghost:       #78a3c7;
+  --accent:         #004daa;
+  --accent-text:    #cbdae6;
+  --accent-label:   #78a3c7;
+  --border:         rgba(120, 163, 199, 0.12);
+  --border-focus:   rgba(120, 163, 199, 0.22);
 
   --font-mono: 'Space Mono', monospace;
   --font-body: system-ui, sans-serif;

@@ -5,27 +5,12 @@
   <div class="hero-content">
     <p class="hero-eyebrow">// backend & mobile developer</p>
     <h1 class="hero-name">deb adalwolf<span class="hero-cursor" aria-hidden="true"></span></h1>
-    <p class="hero-desc">APIs y aplicaciones móviles. Python, Java, Flutter, Docker. Estudiante de DAM en Cesur Sevilla.</p>
+    <p class="hero-desc">APIs y aplicaciones móviles. Python, Java, Flutter, Docker. Contribuidora en Spring Security e iCalendar.</p>
 
     <div class="hero-ctas">
       <a href="#proyectos" class="cta-primary">ver proyectos</a>
       <a href="https://github.com/klouds27" target="_blank" rel="noopener" class="cta-secondary">github ↗</a>
     </div>
-
-    <dl class="hero-stats">
-      <div class="hero-stat">
-        <dt class="stat-label">proyectos</dt>
-        <dd class="stat-value">2</dd>
-      </div>
-      <div class="hero-stat">
-        <dt class="stat-label">contrib. open source</dt>
-        <dd class="stat-value">4+</dd>
-      </div>
-      <div class="hero-stat">
-        <dt class="stat-label">tecnologías core</dt>
-        <dd class="stat-value">5</dd>
-      </div>
-    </dl>
   </div>
 </section>
 
@@ -44,7 +29,7 @@
   .hero-eyebrow {
     font-family: var(--font-mono);
     font-size: 13px;
-    color: var(--green-label);
+    color: var(--accent-label);
     margin-bottom: 1.25rem;
     animation-delay: 0.05s;
   }
@@ -63,7 +48,7 @@
     display: inline-block;
     width: 3px;
     height: 0.85em;
-    background-color: var(--green-label);
+    background-color: var(--accent-label);
     margin-left: 4px;
     vertical-align: middle;
     animation:
@@ -85,7 +70,6 @@
     display: flex;
     gap: 1rem;
     align-items: center;
-    margin-bottom: 3.5rem;
     animation-delay: 0.35s;
   }
 
@@ -93,14 +77,14 @@
     font-family: var(--font-mono);
     font-size: 13px;
     padding: 0.6rem 1.25rem;
-    background-color: var(--green);
-    color: var(--green-text);
+    background-color: var(--accent);
+    color: var(--accent-text);
     border-radius: var(--radius-btn);
     transition: background-color 0.15s ease;
   }
 
   .cta-primary:hover {
-    background-color: #556b43;
+    background-color: #003d88;
   }
 
   .cta-secondary {
@@ -111,33 +95,6 @@
   }
 
   .cta-secondary:hover {
-    color: var(--fg);
-  }
-
-  .hero-stats {
-    display: flex;
-    gap: 2.5rem;
-    animation-delay: 0.45s;
-  }
-
-  .hero-stat {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .stat-label {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--fg-ghost);
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-  }
-
-  .stat-value {
-    font-family: var(--font-mono);
-    font-size: 22px;
-    font-weight: 700;
     color: var(--fg);
   }
 

@@ -1,0 +1,96 @@
+---
+import ProjectCard from './ProjectCard.astro';
+import OssCard from './OssCard.astro';
+
+const projects = [
+  {
+    title: 'Griven API',
+    description: 'API REST para gestión de eventos en tiempo real. JWT, WebSockets, caching distribuido y observabilidad end-to-end.',
+    tags: ['Spring Boot', 'PostgreSQL', 'Redis', 'Docker'],
+    href: 'https://github.com/klouds27/griven-api',
+  },
+  {
+    title: 'Divvi',
+    description: 'App móvil para dividir gastos entre grupos. Algoritmo de liquidación que minimiza el número de transacciones.',
+    tags: ['Flutter', 'Firebase', 'Dart'],
+    href: 'https://github.com/klouds27/divvi',
+  },
+];
+
+const oss = [
+  {
+    name: 'Spring Security',
+    logo: '/logos/spring.png',
+    description: 'Framework de seguridad estándar del ecosistema Spring. Autenticación, autorización y protección para aplicaciones Java.',
+    repo: 'https://github.com/spring-projects/spring-security',
+    site: 'https://spring.io/projects/spring-security',
+  },
+  {
+    name: 'iCal4j',
+    logo: '/logos/ical4j.png',
+    description: 'Librería Java para parsing e integración del estándar RFC 5545 (iCalendar) en aplicaciones de calendarios.',
+    repo: 'https://github.com/ical4j/ical4j',
+    site: 'https://ical4j.github.io',
+  },
+  {
+    name: 'Taiga',
+    logo: '/logos/taiga.png',
+    description: 'Plataforma open source de gestión de proyectos ágiles para equipos de desarrollo de software.',
+    repo: 'https://github.com/taigaio/taiga-back',
+    site: 'https://taiga.io',
+  },
+];
+---
+
+<section class="projects" id="proyectos">
+  <p class="projects-eyebrow">// proyectos</p>
+
+  <div class="projects-grid">
+    {projects.map(p => <ProjectCard {...p} />)}
+  </div>
+
+  <div class="oss-grid">
+    {oss.map(o => <OssCard {...o} />)}
+  </div>
+</section>
+
+<style>
+  .projects {
+    padding: 5rem 4rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .projects-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--accent-label);
+    margin-bottom: 2.5rem;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .oss-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  @media (max-width: 768px) {
+    .projects {
+      padding: 3rem 1.5rem;
+    }
+
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .oss-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

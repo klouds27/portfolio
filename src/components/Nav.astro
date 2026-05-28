@@ -7,7 +7,6 @@ const links = [
 ---
 
 <nav class="nav">
-  <a href="/" class="nav-logo">klouds27</a>
   <ul class="nav-links" role="list">
     {links.map(link => (
       <li>
@@ -23,23 +22,11 @@ const links = [
     top: 0;
     z-index: 100;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     padding: 1.25rem 4rem;
     background-color: var(--bg);
     border-bottom: 1px solid var(--border);
-  }
-
-  .nav-logo {
-    font-family: var(--font-mono);
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--fg);
-    letter-spacing: 0.02em;
-  }
-
-  .nav-logo:hover {
-    color: var(--green-text);
   }
 
   .nav-links {

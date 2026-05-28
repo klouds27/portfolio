@@ -1,0 +1,91 @@
+---
+interface Props {
+  title:       string;
+  description: string;
+  tags:        string[];
+  href?:       string;
+}
+
+const { title, description, tags, href } = Astro.props;
+---
+
+<article class="project-card">
+  <div class="project-card__body">
+    <h3 class="project-card__title">{title}</h3>
+    <p class="project-card__desc">{description}</p>
+    <ul class="project-card__tags" role="list">
+      {tags.map(tag => <li class="project-tag">{tag}</li>)}
+    </ul>
+  </div>
+  {href && (
+    <a href={href} target="_blank" rel="noopener" class="project-card__link">
+      ver proyecto ↗
+    </a>
+  )}
+</article>
+
+<style>
+  .project-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+    transition: border-color 0.15s ease;
+  }
+
+  .project-card:hover {
+    border-color: var(--border-focus);
+  }
+
+  .project-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .project-card__title {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--fg);
+  }
+
+  .project-card__desc {
+    font-size: 14px;
+    color: var(--fg-dim);
+    line-height: 1.6;
+  }
+
+  .project-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    list-style: none;
+    margin-top: 0.25rem;
+  }
+
+  .project-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent-label);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 0.2rem 0.5rem;
+  }
+
+  .project-card__link {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--fg-ghost);
+    transition: color 0.15s ease;
+    align-self: flex-start;
+  }
+
+  .project-card__link:hover {
+    color: var(--fg);
+  }
+</style>

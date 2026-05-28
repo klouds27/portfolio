@@ -1,0 +1,81 @@
+---
+interface Props {
+  name:        string;
+  logo:        string;
+  description: string;
+  repo:        string;
+  site:        string;
+}
+
+const { name, logo, description, repo, site } = Astro.props;
+---
+
+<article class="oss-card">
+  <div class="oss-card__header">
+    <img src={logo} alt={name} class="oss-card__logo" width="36" height="36" />
+    <h3 class="oss-card__name">{name}</h3>
+  </div>
+  <p class="oss-card__desc">{description}</p>
+  <div class="oss-card__links">
+    <a href={repo} target="_blank" rel="noopener" class="oss-link">repo ↗</a>
+    <a href={site} target="_blank" rel="noopener" class="oss-link">sitio ↗</a>
+  </div>
+</article>
+
+<style>
+  .oss-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-card);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: border-color 0.15s ease;
+  }
+
+  .oss-card:hover {
+    border-color: var(--border-focus);
+  }
+
+  .oss-card__header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .oss-card__logo {
+    border-radius: 6px;
+    object-fit: cover;
+  }
+
+  .oss-card__name {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--fg);
+  }
+
+  .oss-card__desc {
+    font-size: 13px;
+    color: var(--fg-dim);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .oss-card__links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .oss-link {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--fg-ghost);
+    transition: color 0.15s ease;
+  }
+
+  .oss-link:hover {
+    color: var(--fg);
+  }
+</style>
